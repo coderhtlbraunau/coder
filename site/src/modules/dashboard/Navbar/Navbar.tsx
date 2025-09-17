@@ -28,7 +28,7 @@ export const Navbar: FC = () => {
 	return (
 		<NavbarView
 			user={me}
-			logo_url={appearance.logo_url}
+			logo_url={"https://upload.wikimedia.org/wikipedia/de/thumb/2/21/HTL_Braunau_Logo.svg/2560px-HTL_Braunau_Logo.svg.png"}
 			buildInfo={buildInfoQuery.data}
 			supportLinks={appearance.support_links}
 			onSignOut={signOut}
