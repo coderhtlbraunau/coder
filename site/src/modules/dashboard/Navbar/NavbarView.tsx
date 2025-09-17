@@ -60,6 +60,7 @@ export const NavbarView: FC<NavbarViewProps> = ({
 
 	return (
 		<div className="border-0 border-b border-solid h-[72px] min-h-[72px] flex items-center leading-none px-6">
+			
 			<NavLink to="/workspaces">
 				{logo_url ? (
 					<ExternalImage className="h-7" src={logo_url} alt="Custom Logo" />
@@ -156,6 +157,17 @@ const NavItems: FC<NavItemsProps> = ({ className, user }) => {
 		<nav className={cn("flex items-center gap-4 h-full", className)}>
 			<NavLink
 				className={({ isActive }) => {
+					if (location.pathname.startsWith("/test")) {
+						isActive = true;
+					}
+					return cn(linkStyles.default, { [linkStyles.active]: isActive });
+				}}
+				to="/aufgaben"
+			>
+				Aufgaben
+			</NavLink>
+			<NavLink
+				className={({ isActive }) => {
 					if (location.pathname.startsWith("/@")) {
 						isActive = true;
 					}
@@ -163,7 +175,7 @@ const NavItems: FC<NavItemsProps> = ({ className, user }) => {
 				}}
 				to="/workspaces"
 			>
-				Workspaces
+				Projekte
 			</NavLink>
 			<NavLink
 				className={({ isActive }) => {

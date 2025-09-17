@@ -74,6 +74,7 @@ const WorkspaceBuildPage = lazy(
 	() => import("./pages/WorkspaceBuildPage/WorkspaceBuildPage"),
 );
 const WorkspacePage = lazy(() => import("./pages/WorkspacePage/WorkspacePage"));
+const AufgabenPage = lazy(() => import("./pages/AufgabenPage/AufgabenPage"));
 const WorkspaceSchedulePage = lazy(
 	() =>
 		import(
@@ -415,6 +416,8 @@ export const router = createBrowserRouter(
 					/>
 
 					<Route path="/workspaces" element={<WorkspacesPage />} />
+					<Route path="/aufgaben" element={<AufgabenPage />} />
+
 
 					<Route path="/starter-templates">
 						<Route index element={<CreateTemplateGalleryPage />} />
